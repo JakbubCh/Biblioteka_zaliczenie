@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka - Kontakt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #57321a;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #b97e3a;
+        }
+
+        .contact-form input, 
+        .contact-form textarea, 
+        .contact-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #b97e3a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #995e28;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            margin: 0;
+            color: #b97e3a;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .map {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            clear: both;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            console.log("Strona załadowana!");
+            // Możesz dodać dodatkowe skrypty JavaScript/jQuery tutaj.
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Kontakt</h1>
+        <nav>
+            <ul>
+                <li><a href="Strona Główna.html">Strona Główna</a></li>
+                <li><a href="O Bibliotece.html">O Bibliotece</a></li>
+                <li><a href="Katalog Książek.html">Katalog Książek</a></li>
+                <li><a href="Wydarzenia i Aktualności.html">Wydarzenia i Aktualności</a></li>
+                <li><a href="Usługi.html">Usługi</a></li>
+                <li><a href="Regulamin.html">Regulamin</a></li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+                <li><a href="Galeria.html">Galeria</a></li>
+                <li><a href="Zasoby Online.html">Zasoby Online</a></li>
+                <li><a href="Zabawa.html">Zabawa</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Formularz Kontaktowy</h2>
+            
+            <div class="contact-form">
+                <form>
+                    <label for="name">Imię:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="name">Nazwisko:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="number">Numer:</label>
+                    <input type="number" id="number" name="number" required>
+
+                    <label for="number">*Fax:</label>
+                    <input type="number" id="number" name="number" notrequired>
+
+                    <label for="subject">Temat:</label>
+                    <input type="text" id="subject" name="subject" required>
+
+                    <label for="message">Wiadomość:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <p>*- opcjonalne</p>
+                    <button type="submit">Wyślij</button>
+                </form>
+            </div>
+        </section>
+        <section class="contact-info">
+            <h3>Dane Kontaktowe</h3>
+            <p>Biblioteka Miejska</p>
+            <p>ul. Książkowa 12, 00-123 Warszawa</p>
+            <p>Telefon: +48 123 456 789</p>
+            <p>Email: kontakt@biblioteka.pl</p>
+        </section>
+        <section class="map">
+            <h3>Tu nas znajdziesz.</h3>
+            <p></p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.5846893203086!2d21.01577961613012!3d52.22661417975743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc87475ad01f%3A0xc74a1e3d8ed2c131!2sKsi%C4%85%C5%BCkowa%2012%2C%2000-123%20Warszawa%2C%20Polska!5e0!3m2!1spl!2sus!4v1620064670658!5m2!1spl!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+    <footer>
+        <p>Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.</p>
+        <p>Autor: Jakub Chmielecki</p>
+    </footer>
+</body>
+</html>

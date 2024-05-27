@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka - O Bibliotece</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #57321a;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .presentation {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .slides {
+            display: none;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .text {
+            color: #ffffff;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;                    
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+            background: #ddd;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>O Bibliotece</h1>
+        <nav>
+            <ul>
+                <li><a href="Strona Główna.html">Strona Główna</a></li>
+                <li><a href="O Bibliotece.html">O Bibliotece</a></li>
+                <li><a href="Katalog Książek.html">Katalog Książek</a></li>
+                <li><a href="Wydarzenia i Aktualności.html">Wydarzenia i Aktualności</a></li>
+                <li><a href="Usługi.html">Usługi</a></li>
+                <li><a href="Regulamin.html">Regulamin</a></li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+                <li><a href="Galeria.html">Galeria</a></li>
+                <li><a href="Zasoby Online.html">Zasoby Online</a></li>
+                <li><a href="Zabawa.html">Zabawa</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>O naszej Bibliotece</h2>
+            <p>Nasza biblioteka została założona w 1850 roku i od tego czasu służy lokalnej społeczności jako centrum wiedzy i kultury. Oferujemy szeroki wybór książek, czasopism, oraz dostęp do zasobów cyfrowych. Organizujemy również liczne wydarzenia kulturalne i edukacyjne.</p>
+        </section>
+
+        <section class="presentation">
+            <div class="slides fade">
+                <img src="biblioteka1.jpg" alt="Biblioteka z zewnątrz">
+                <div class="text">Biblioteka z zewnątrz</div>
+            </div>
+
+            <div class="slides fade">
+                <img src="biblioteka2.jpg" alt="Wnętrze biblioteki">
+                <div class="text">Wnętrze biblioteki</div>
+            </div>
+
+            <div class="slides fade">
+                <img src="biblioteka3.jpg" alt="Kącik czytelniczy">
+                <div class="text">Kącik czytelniczy</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </section>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </main>
+    <footer>
+        <p>Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.</p>
+        <p>Autor: Imię Nazwisko</p>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        let slideInterval = setInterval(() => {
+            plusSlides(1);
+        }, 5000);
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                plusSlides(1);
+            }, 5000);
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                plusSlides(1);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
+

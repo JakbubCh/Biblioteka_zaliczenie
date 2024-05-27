@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka - Wydarzenia i Aktualności</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #57321a;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        .event, .news {
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .event h3, .news h3 {
+            margin: 0;
+            color: #b97e3a;
+        }
+
+        .event p, .news p {
+            display: none;
+        }
+
+        .read-more {
+            color: #b97e3a;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: static;
+            width: 100%;
+            bottom: 0;
+            clear: both;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".read-more").click(function() {
+                const content = $(this).siblings("p");
+                const isVisible = content.is(":visible");
+                $(this).text(isVisible ? "Czytaj więcej" : "Czytaj mniej");
+                content.slideToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Wydarzenia i Aktualności</h1>
+        <nav>
+            <ul>
+                <li><a href="Strona Główna.html">Strona Główna</a></li>
+                <li><a href="O Bibliotece.html">O Bibliotece</a></li>
+                <li><a href="Katalog Książek.html">Katalog Książek</a></li>
+                <li><a href="Wydarzenia i Aktualności.html">Wydarzenia i Aktualności</a></li>
+                <li><a href="Usługi.html">Usługi</a></li>
+                <li><a href="Regulamin.html">Regulamin</a></li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+                <li><a href="Galeria.html">Galeria</a></li>
+                <li><a href="Zasoby Online.html">Zasoby Online</a></li>
+                <li><a href="Zabawa.html">Zabawa</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Nadchodzące Wydarzenia</h2>
+            <div class="event">
+                <h3>Spotkanie Autorskie z Janem Kowalskim</h3>
+                <p>Data: 25 maja 2024</p>
+                <p>
+                    Zapraszamy na spotkanie z autorem bestsellerowych powieści. Spotkanie odbędzie się w naszej bibliotece, sala konferencyjna. Jan Kowalski opowie o swojej twórczości, procesie pisania oraz inspiracjach do swoich książek. To doskonała okazja, aby zadać pytania autorowi i zdobyć jego autograf. Przyjdź i spotkaj się z jednym z najbardziej poczytnych autorów współczesnej literatury. Nie przegap tego wyjątkowego wydarzenia kulturalnego, które z pewnością dostarczy wielu niezapomnianych wrażeń. Spotkanie rozpocznie się o godzinie 17:00 i potrwa około dwóch godzin. Wstęp wolny, jednak liczba miejsc jest ograniczona, dlatego prosimy o wcześniejszą rezerwację.
+                </p>
+                <span class="read-more">Czytaj więcej</span>
+            </div>
+            <div class="event">
+                <h3>Warsztaty Literackie</h3>
+                <p>Data: 1 czerwca 2024</p>
+                <p>
+                    Warsztaty literackie dla młodzieży. Uczestnicy będą mieli okazję nauczyć się podstaw pisania kreatywnego oraz pracy nad tekstem. Warsztaty poprowadzi doświadczony pisarz i nauczyciel, który podzieli się swoją wiedzą i doświadczeniem z młodymi adeptami literatury. Podczas warsztatów omówione zostaną różne techniki pisarskie, metody rozwijania wyobraźni oraz sposoby na tworzenie interesujących fabuł i bohaterów. Uczestnicy będą mieli również możliwość zaprezentowania swoich tekstów i otrzymania konstruktywnej krytyki. Warsztaty odbędą się w sali konferencyjnej naszej biblioteki i potrwają od godziny 10:00 do 14:00. Wstęp wolny, zapisy obowiązkowe.
+                </p>
+                <span class="read-more">Czytaj więcej</span>
+            </div>
+            <div class="event">
+                <h3>Dyskusyjny Klub Książki</h3>
+                <p>Data: 10 czerwca 2024</p>
+                <p>
+                    Spotkanie Dyskusyjnego Klubu Książki. Tym razem omawiamy powieść "Zbrodnia i kara" Fiodora Dostojewskiego. Zapraszamy wszystkich miłośników literatury do wspólnej dyskusji na temat tej klasycznej powieści. Podczas spotkania będziemy analizować główne motywy, postacie oraz kontekst historyczny i społeczny, w jakim powieść została napisana. Dyskusje w naszym klubie są zawsze pełne pasji i ciekawych wniosków, dlatego zachęcamy do udziału zarówno stałych bywalców, jak i nowe osoby, które chcą podzielić się swoimi przemyśleniami na temat literatury. Spotkanie odbędzie się w czytelni naszej biblioteki o godzinie 18:00. Wstęp wolny.
+                </p>
+                <span class="read-more">Czytaj więcej</span>
+            </div>
+        </section>
+        <section>
+            <h2>Aktualności</h2>
+            <div class="news">
+                <h3>Nowe godziny otwarcia biblioteki</h3>
+                <p>
+                    Od 1 czerwca 2024 roku nasza biblioteka będzie otwarta w nowych godzinach: od poniedziałku do piątku od 9:00 do 18:00, w soboty od 10:00 do 14:00. Zmiana godzin otwarcia ma na celu dostosowanie naszej oferty do potrzeb czytelników, którzy często mają ograniczony czas na odwiedzanie biblioteki w godzinach pracy. Mamy nadzieję, że nowe godziny otwarcia będą bardziej dogodne dla wszystkich naszych użytkowników. Wprowadzamy również nowy harmonogram wydarzeń i warsztatów, który będzie dostępny na naszej stronie internetowej oraz w budynku biblioteki. Zachęcamy do śledzenia naszych aktualności, aby być na bieżąco z wszystkimi zmianami i nowościami.
+                </p>
+                <span class="read-more">Czytaj więcej</span>
+            </div>
+            <div class="news">
+                <h3>Nowości wydawnicze</h3>
+                <p>
+                    Do naszego katalogu dodaliśmy nowe tytuły, w tym najnowsze powieści znanych autorów oraz książki popularnonaukowe. Wśród nowości znajdują się m.in. bestsellery z list New York Timesa, najnowsze publikacje naukowe oraz interesujące biografie i poradniki. Każdy znajdzie coś dla siebie - zarówno miłośnicy literatury pięknej, jak i czytelnicy poszukujący rzetelnych źródeł wiedzy na różne tematy. Wszystkie nowości są dostępne do wypożyczenia w naszej bibliotece. Zachęcamy do odwiedzenia naszego katalogu online, gdzie można sprawdzić dostępność poszczególnych tytułów oraz zarezerwować książki.
+                </p>
+                <span class="read-more">Czytaj więcej</span>
+            </div>
+            <div class="news">
+                <h3>Remont czytelni</h3>
+                <p>
+                    Informujemy, że w dniach od 5 do 15 czerwca 2024 roku czytelnia będzie nieczynna z powodu remontu. Przepraszamy za utrudnienia i prosimy o wyrozumiałość. Remont ma na celu poprawę komfortu naszych czytelników oraz modernizację przestrzeni, aby była bardziej funkcjonalna i przyjazna dla użytkowników. W ramach prac remontowych planujemy wymianę mebli, modernizację oświetlenia oraz wprowadzenie nowych udogodnień technologicznych. Wszystkie inne działy biblioteki będą funkcjonować bez zmian. Zachęcamy do korzystania z innych naszych zasobów i usług w czasie trwania remontu.
+                </p>
+                <span class="read-more">Czytaj więcej</span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.</p>
+        <p>Autor: Jakub Chmielecki</p>
+    </footer>
+</body>
+</html>

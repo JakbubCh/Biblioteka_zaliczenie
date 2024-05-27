@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteka Publiczna - Zabawa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #57321a;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        canvas { border: 5px solid #000; margin-top: 20px; display: block; }
+        .controls { margin-top: 20px; }
+        .controls button { margin-right: 10px;}
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zabawa w Bibliotece</h1>
+        <nav>
+            <ul>
+                <li><a href="Strona Główna.html">Strona Główna</a></li>
+                <li><a href="O Bibliotece.html">O Bibliotece</a></li>
+                <li><a href="Katalog Książek.html">Katalog Książek</a></li>
+                <li><a href="Wydarzenia i Aktualności.html">Wydarzenia i Aktualności</a></li>
+                <li><a href="Usługi.html">Usługi</a></li>
+                <li><a href="Regulamin.html">Regulamin</a></li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+                <li><a href="Galeria.html">Galeria</a></li>
+                <li><a href="Zasoby Online.html">Zasoby Online</a></li>
+                <li><a href="Zabawa.html">Zabawa</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>A może narysujesz swojego ulubionego bohatera</h2>
+        <h2>książki którą ostatnio przeczytałeś?</h2>
+        <div class="controls">
+            <button onclick="clearCanvas()">Wyczyść</button>
+            <button onclick="changeColor('red')">Czerwony</button>
+            <button onclick="changeColor('green')">Zielony</button>
+            <button onclick="changeColor('blue')">Niebieski</button>
+            <button onclick="changeColor('yellow')">Żółty</button>
+            <button onclick="changeColor('black')">Czarny</button>
+        </div>
+        <canvas id="drawingCanvas" width="800" height="600"></canvas>
+    </main>
+    <footer>
+        <p>Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.</p>
+        <p>Autor: Jakub Chmielecki</p>
+    </footer>
+    <script>
+        const canvas = document.getElementById('drawingCanvas');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+        let currentColor = 'black';
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        function startDrawing(e) {
+            drawing = true;
+            draw(e); 
+        }
+
+        function draw(e) {
+            if (!drawing) return;
+            ctx.lineWidth = 5;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = currentColor;
+            ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        }
+
+        function stopDrawing() {
+            drawing = false;
+            ctx.beginPath();
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function changeColor(color) {
+            currentColor = color;
+        }
+    </script>
+</body>
+</html>

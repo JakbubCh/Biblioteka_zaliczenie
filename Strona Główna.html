@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka - Strona Główna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #57321a;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-image: url('biblioteka.jpg'); /* Użyj odpowiedniego obrazu */
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            color: #b97e3a;
+            text-align: center;
+        }
+
+        .hero h2 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 200px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #57321a;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 250px;
+            max-width: 30%;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 240px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .card h3 {
+            color: #b97e3a;
+        }    
+
+        .newsletter {
+            background-color: #b97e3a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 40px;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .newsletter input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #b97e3a;
+            color: white;
+            cursor: pointer;
+        }
+
+        .map {
+            height: 300px;
+        } 
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            clear: both;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            console.log("Strona załadowana!");
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Biblioteka</h1>
+        <nav>
+            <ul>
+                <li><a href="Strona Główna.html">Strona Główna</a></li>
+                <li><a href="O Bibliotece.html">O Bibliotece</a></li>
+                <li><a href="Katalog Książek.html">Katalog Książek</a></li>
+                <li><a href="Wydarzenia i Aktualności.html">Wydarzenia i Aktualności</a></li>
+                <li><a href="Usługi.html">Usługi</a></li>
+                <li><a href="Regulamin.html">Regulamin</a></li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+                <li><a href="Galeria.html">Galeria</a></li>
+                <li><a href="Zasoby Online.html">Zasoby Online</a></li>
+                <li><a href="Zabawa.html">Zabawa</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <h2>Witamy w naszej Bibliotece</h2>
+        <p>Znajdź swoją ulubioną książkę i odkryj nowe tytuły</p>
+    </div>
+    <main>
+        <section class="section">
+            <h2>Najważniejsze Sekcje</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="katalog.jpg" alt="Katalog Książek">
+                    <h3>Katalog Książek</h3>
+                    <p>Przeglądaj nasze zasoby książek online.</p>
+                    <a href="Katalog Książek.html">Więcej</a>
+                </div>
+                <div class="card">
+                    <img src="wydarzenia.jpg" alt="Wydarzenia">
+                    <h3>Wydarzenia</h3>
+                    <p>Sprawdź nadchodzące wydarzenia i spotkania autorskie.</p>
+                    <a href="Wydarzenia i Aktualności.html">Więcej</a>
+                </div>
+                <div class="card">
+                    <img src="uslugi.jpg" alt="Usługi">
+                    <h3>Usługi</h3>
+                    <p>Dowiedz się więcej o usługach oferowanych przez naszą bibliotekę.</p>
+                    <a href="Usługi.html">Więcej</a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2>Aktualności</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Nowe godziny otwarcia</h3>
+                    <p>Od 1 czerwca 2024 roku nasza biblioteka będzie otwarta w nowych godzinach: od poniedziałku do piątku od 9:00 do 18:00, w soboty od 10:00 do 14:00.</p>
+                </div>
+                <div class="card">
+                    <h3>Nowości wydawnicze</h3>
+                    <p>Do naszego katalogu dodaliśmy nowe tytuły, w tym najnowsze powieści znanych autorów oraz książki popularnonaukowe.</p>
+                </div>
+                <div class="card">
+                    <h3>Remont czytelni</h3>
+                    <p>Informujemy, że w dniach od 5 do 15 czerwca 2024 roku czytelnia będzie nieczynna z powodu remontu. Przepraszamy za utrudnienia.</p>
+                </div>
+            </div>
+        </section>
+        <section class="newsletter">
+            <h2>Zapisz się do naszego Newslettera</h2>
+            <form action="#">
+                <input type="email" placeholder="Wpisz swój email">
+                <input type="submit" value="Zapisz się">
+            </form>
+        </section>
+        <section class="section">
+            <h2>Znajdź nas tutaj.</h2>
+            <div id="map" class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.5846893203086!2d21.01577961613012!3d52.22661417975743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc87475ad01f%3A0xc74a1e3d8ed2c131!2sKsi%C4%85%C5%BCkowa%2012%2C%2000-123%20Warszawa%2C%20Polska!5e0!3m2!1spl!2sus!4v1620064670658!5m2!1spl!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+        <section class="section">
+            <h2>Opinie użytkowników</h2>
+            <div class="cards">
+                <div class="card">
+                    <p>"Biblioteka oferuje ogromny wybór książek i zawsze znajduje się tu coś ciekawego!"</p>
+                    <p>- Anna Kowalska</p>
+                </div>
+                <div class="card">
+                    <p>"Pracownicy są bardzo pomocni, a atmosfera w bibliotece jest świetna."</p>
+                    <p>- Jan Nowak</p>
+                </div>
+                <div class="card">
+                    <p>"Uwielbiam uczestniczyć w wydarzeniach organizowanych przez bibliotekę."</p>
+                    <p>- Maria Wiśniewska</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.</p>
+        <p>Autor: Jakub Chmielecki</p>
+    </footer>
+</body>
+</html>

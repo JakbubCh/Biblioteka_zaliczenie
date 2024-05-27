@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka - Galeria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #57321a;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .gallery {
+            text-align: center;
+        }
+
+        .gallery img {
+            width: 400px;
+            height: auto;
+            display: none;
+            margin: 0 auto;
+        }
+
+        .gallery img.active {
+            display: block;
+        }
+
+        .gallery-description {
+            font-size: 16px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .gallery-description.active {
+            display: block;
+        }
+
+        .gallery-nav {
+            margin-top: 20px;
+        }
+
+        .gallery-nav button {
+            padding: 10px 20px;
+            background-color: #b97e3a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .gallery-nav button:hover {
+            background-color: #995e28;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            clear: both;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let currentImageIndex = 0;
+            const images = $('.gallery img');
+            const descriptions = $('.gallery-description');
+            const totalImages = images.length;
+
+            function showImage(index) {
+                images.removeClass('active');
+                images.eq(index).addClass('active');
+                descriptions.removeClass('active');
+                descriptions.eq(index).addClass('active');
+            }
+
+            $('#prev').click(function() {
+                currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : totalImages - 1;
+                showImage(currentImageIndex);
+            });
+
+            $('#next').click(function() {
+                currentImageIndex = (currentImageIndex < totalImages - 1) ? currentImageIndex + 1 : 0;
+                showImage(currentImageIndex);
+            });
+            showImage(currentImageIndex);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Galeria</h1>
+        <nav>
+            <ul>
+                <li><a href="Strona Główna.html">Strona Główna</a></li>
+                <li><a href="O Bibliotece.html">O Bibliotece</a></li>
+                <li><a href="Katalog Książek.html">Katalog Książek</a></li>
+                <li><a href="Wydarzenia i Aktualności.html">Wydarzenia i Aktualności</a></li>
+                <li><a href="Usługi.html">Usługi</a></li>
+                <li><a href="Regulamin.html">Regulamin</a></li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+                <li><a href="Galeria.html">Galeria</a></li>
+                <li><a href="Zasoby Online.html">Zasoby Online</a></li>
+                <li><a href="Zabawa.html">Zabawa</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="gallery">
+            <h2>Galeria Zdjęć</h2>
+            <img src="biblioteka2.jpg" alt="Obraz 1" class="active">
+            <img src="biblioteka1.jpg" alt="Obraz 2">
+            <img src="obraz3.jpg" alt="Obraz 3">
+            <img src="obraz4.jpg" alt="Obraz 4">
+            <img src="biblioteka3.jpg" alt="Obraz 5">
+            <div class="gallery-description active">Opis obrazu 1: Biblioteka w środku</div>
+            <div class="gallery-description">Opis obrazu 2: Zewnętrzny widok biblioteki</div>
+            <div class="gallery-description">Opis obrazu 3: Spotkanie autorskie</div>
+            <div class="gallery-description">Opis obrazu 4: Warsztaty literackie</div>
+            <div class="gallery-description">Opis obrazu 5: Czytelnia</div>
+            <div class="gallery-nav">
+                <button id="prev">Poprzedni</button>
+                <button id="next">Następny</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.</p>
+        <p>Autor: Jakub Chmielecki</p>
+    </footer>
+</body>
+</html>

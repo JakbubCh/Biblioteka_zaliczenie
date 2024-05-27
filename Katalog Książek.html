@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka Publiczna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #57321a;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        } 
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        main {
+            padding: 20px;
+        }
+        .hero {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #b97e3a;
+        }
+    </style>
+    <script>
+        function searchBooks() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const table = document.getElementById("booksTable");
+            const rows = table.getElementsByTagName("tr");
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName("td");
+                let match = false;
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j].innerText.toLowerCase().includes(input)) {
+                        match = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = match ? "" : "none";
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <header>
+        <h1>O Bibliotece</h1>
+        <nav>
+            <ul>
+                <li><a href="Strona Główna.html">Strona Główna</a></li>
+                <li><a href="O Bibliotece.html">O Bibliotece</a></li>
+                <li><a href="Katalog Książek.html">Katalog Książek</a></li>
+                <li><a href="Wydarzenia i Aktualności.html">Wydarzenia i Aktualności</a></li>
+                <li><a href="Usługi.html">Usługi</a></li>
+                <li><a href="Regulamin.html">Regulamin</a></li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+                <li><a href="Galeria.html">Galeria</a></li>
+                <li><a href="Zasoby Online.html">Zasoby Online</a></li>
+                <li><a href="Zabawa.html">Zabawa</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <h2>Witamy w naszej Bibliotece</h2>
+            <p>Znajdź swoją ulubioną książkę i odkryj nowe tytuły</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="searchBooks()" placeholder="Wyszukaj książki...">
+        </div>
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Tytuł</th>
+                <th onclick="sortTable(1)">Autor</th>
+                <th onclick="sortTable(2)">Gatunek</th>
+                <th onclick="sortTable(3)">Opis</th>
+            </tr>
+        </thead>
+        <table id="booksTable">
+            <tr>
+                <th>Tytuł</th>
+                <th>Autor</th>
+                <th>Gatunek</th>
+                <th>Opis</th>
+            </tr>
+            <tr>
+                <td>1984</td>
+                <td>George Orwell</td>
+                <td>Dystopia</td>
+                <td>Wizja totalitarnego państwa, gdzie Wielki Brat patrzy.</td>
+            </tr>
+            <tr>
+                <td>Alchemik</td>
+                <td>Paulo Coelho</td>
+                <td>Fikcja, Motywacyjna</td>
+                <td>Historia młodego pasterza Santiago, który wyrusza na poszukiwanie skarbu.</td>
+            </tr>
+            <tr>
+                <td>Anna Karenina</td>
+                <td>Lew Tołstoj</td>
+                <td>Klasyka, Romans</td>
+                <td>Historia miłości i zdrady w arystokratycznej Rosji.</td>
+            </tr>
+            <tr>
+                <td>Atomowe nawyki. Drobne zmiany, niezwykłe efekty.</td>
+                <td>James Clear</td>
+                <td>Samorozwój</td>
+                <td>Książka o budowaniu dobrych nawyków i eliminowaniu złych.</td>
+            </tr>
+            <tr>
+                <td>Bajecznie bogaci Azjaci</td>
+                <td>Kevin Kwan</td>
+                <td>Komedia, Romans</td>
+                <td>Historia miłości między Rachel Chu a Nickiem Youngiem na tle azjatyckiej elity.</td>
+            </tr>
+            <tr>
+                <td>Becoming</td>
+                <td>Michelle Obama</td>
+                <td>Biografia, Autobiografia</td>
+                <td>Historia życia Michelle Obamy, od dzieciństwa w Chicago do Białego Domu.</td>
+            </tr>
+            <tr>
+                <td>Bóg zawsze da Ci pracę</td>
+                <td>Regina Brett</td>
+                <td>Motywacja, Duchowość</td>
+                <td>Zbiór inspirujących historii o poszukiwaniu sensu i celu w życiu.</td>
+            </tr>
+            <tr>
+                <td>Cień wiatru</td>
+                <td>Carlos Ruiz Zafón</td>
+                <td>Fikcja, Mistery</td>
+                <td>Opowieść o młodym chłopcu, który odkrywa tajemniczą książkę w Barcelonie.</td>
+            </tr>
+            <tr>
+                <td>Córka czasu</td>
+                <td>Josephine Tey</td>
+                <td>Kryminał, Mistery</td>
+                <td>Detektyw rekonstruuje tajemnicę historyczną z łóżka szpitalnego.</td>
+            </tr>
+            <tr>
+                <td>Dom duchów</td>
+                <td>Isabel Allende</td>
+                <td>Fikcja, Magiczny realizm</td>
+                <td>Saga rodzinna z elementami magicznego realizmu.</td>
+            </tr>
+            <tr>
+                <td>Duma i Uprzedzenie</td>
+                <td>Jane Austen</td>
+                <td>Romans, Klasyka</td>
+                <td>Klasyczna powieść o miłości i uprzedzeniach w angielskiej wsi.</td>
+            </tr>
+            <tr>
+                <td>Dziewczyna z tatuażem</td>
+                <td>Dan Burstein, John-Henri Holmberg , Arne de Keijzer</td>
+                <td>Kryminał, Mistery</td>
+                <td>Seria o dziewczynie z tatuażem, która odkrywa mroczne tajemnice.</td>
+            </tr>
+            <tr>
+                <td>Fioletowy Hibiskus</td>
+                <td>Chimamanda Ngozi Adichie</td>
+                <td>Fikcja, Dramat</td>
+                <td>Opowieść o dojrzewaniu w Nigerii pod rządami despotycznego ojca.</td>
+            </tr>
+            <tr>
+                <td>Harry Potter saga</td>
+                <td>J.K. Rowling</td>
+                <td>Fantastyka</td>
+                <td>Opowieść o młodym czarodzieju Harrym Potterze i jego przygodach w Szkole Magii i Czarodziejstwa w Hogwarcie.</td>
+            </tr>
+            <tr>
+                <td>Hobbit trylogia</td>
+                <td>J.R.R. Tolkien</td>
+                <td>Fantastyka, Przygodowa</td>
+                <td>Opowieść o przygodach Bilba Bagginsa w Śródziemiu.</td>
+            </tr>
+            <tr>
+                <td>I że Cię nie opuszczę</td>
+                <td>Michelle Richmond</td>
+                <td>Thriller, Romans</td>
+                <td>Opowieść o mrocznych tajemnicach małżeństwa.</td>
+            </tr>
+            <tr>
+                <td>Jak myśleć mniej</td>
+                <td>Christel Petitcollin</td>
+                <td>Psychologia</td>
+                <td>Poradnik o kontrolowaniu nadmiernego myślenia.</td>
+            </tr>
+            <tr>
+                <td>Jak myśleć o sobie dobrze? O sztuce akceptacji i życiu bez lęku.</td>
+                <td>Stefanie Stahl</td>
+                <td>Psychologia, Samorozwój</td>
+                <td>Poradnik o akceptacji siebie i radzeniu sobie z lękiem.</td>
+            </tr>
+            <tr>
+                <td>Kłamstwa Locke'a Lamory</td>
+                <td>Scott Lynch</td>
+                <td>Fantastyka, Kryminał</td>
+                <td>Historia młodego złodzieja w świecie pełnym magii i intryg.</td>
+            </tr>
+            <tr>
+                <td>Kod Leonarda da Vinci</td>
+                <td>Dan Brown</td>
+                <td>Thriller, Mistery</td>
+                <td>Thriller o tajemnicach Kościoła i historii sztuki.</td>
+            </tr>
+            <tr>
+                <td>Kobiety, jedzenie i Bóg</td>
+                <td>Geneen Roth</td>
+                <td>Samorozwój, Duchowość</td>
+                <td>Opowieść o relacji kobiet z jedzeniem i duchowością.</td>
+            </tr>
+            <tr>
+                <td>Koło Czasu</td>
+                <td>Robert Jordan</td>
+                <td>Fantastyka</td>
+                <td>Epicka saga o walce dobra ze złem w magicznym świecie.</td>
+            </tr>
+            <tr>
+                <td>Małe kobietki</td>
+                <td>Louisa May Alcott</td>
+                <td>Fikcja, Klasyka</td>
+                <td>Opowieść o czterech siostrach dorastających w czasie wojny secesyjnej.</td>
+            </tr>
+            <tr>
+                <td>Małe ogniska</td>
+                <td>Celeste Ng</td>
+                <td>Fikcja, Dramat</td>
+                <td>Historia konfliktu między dwoma rodzinami w małym amerykańskim miasteczku.</td>
+            </tr>
+            <tr>
+                <td>Make your bed. Proste rzeczy, które zmienią Twoje życie.</td>
+                <td>William H. McRaven</td>
+                <td>Samorozwój, Motywacja</td>
+                <td>Poradnik o prostych nawykach, które mogą zmienić życie.</td>
+            </tr>
+            <tr>
+                <td>Millennium</td>
+                <td>Stieg Larsson</td>
+                <td>Kryminał, Thriller</td>
+                <td>Seria kryminałów z dziennikarzem Mikaelem Blomkvistem i hakerką Lisbeth Salander.</td>
+            </tr>
+            <tr>
+                <td>Morderstwo w Orient Expressie</td>
+                <td>Agatha Christie</td>
+                <td>Kryminał, Mistery</td>
+                <td>Detektyw Hercule Poirot rozwiązuje zagadkę morderstwa w luksusowym pociągu.</td>
+            </tr>
+            <tr>
+                <td>Moja doskonała żona</td>
+                <td>Harlan Coben</td>
+                <td>Thriller, Mistery</td>
+                <td>Historia małżeństwa skrywającego mroczne sekrety.</td>
+            </tr>
+            <tr>
+                <td>Mroczna Wieża cykl</td>
+                <td>Stephen King</td>
+                <td>Fantastyka, Horror</td>
+                <td>Epicka saga łącząca elementy fantasy, horroru i westernu.</td>
+            </tr>
+            <tr>
+                <td>Najbardziej niebieskie oko</td>
+                <td>Toni Morrison</td>
+                <td>Fikcja, Klasyka</td>
+                <td>Historia czarnej dziewczynki pragnącej mieć niebieskie oczy.</td>
+            </tr>
+            <tr>
+                <td>Obca cykl</td>
+                <td>Diana Gabaldon</td>
+                <td>Fantastyka, Romans</td>
+                <td>Historia angielskiej pielęgniarki, która przenosi się w czasie do XVIII-wiecznej Szkocji.</td>
+            </tr>
+            <tr>
+                <td>Opowieść podręcznej</td>
+                <td>Margaret Atwood</td>
+                <td>Fikcja, Dystopia</td>
+                <td>Historia kobiet w totalitarnym społeczeństwie przyszłości.</td>
+            </tr>
+            <tr>
+                <td>O starym człowieku, co czytał romanse</td>
+                <td>Luis Sepúlveda</td>
+                <td>Fikcja, Przygoda</td>
+                <td>Historia starego człowieka żyjącego w amazońskiej dżungli.</td>
+            </tr>
+            <tr>
+                <td>Pamiętnik</td>
+                <td>Nicholas Sparks</td>
+                <td>Romans, Dramat</td>
+                <td>Miłosna historia, która przetrwała próbę czasu.</td>
+            </tr>
+            <tr>
+                <td>Pani Dalloway</td>
+                <td>Virginia Woolf</td>
+                <td>Fikcja, Klasyka</td>
+                <td>Jednodniowa opowieść o życiu Clarissy Dalloway w Londynie.</td>
+            </tr>
+            <tr>
+                <td>Pieśń lodu i ognia</td>
+                <td>George R.R. Martin</td>
+                <td>Fantastyka, Epicka</td>
+                <td>Epicka saga o walce o władzę w fikcyjnym świecie Westeros.</td>
+            </tr>
+            <tr>
+                <td>Prorok</td>
+                <td>Khalil Gibran</td>
+                <td>Poezja, Filozofia</td>
+                <td>Zbiór poetyckich esejów o miłości, życiu i śmierci.</td>
+            </tr>
+            <tr>
+                <td>Reguła 5 sekund</td>
+                <td>Mel Robbins</td>
+                <td>Samorozwój, Motywacja</td>
+                <td>Technika motywacyjna oparta na zasadzie działania w ciągu 5 sekund.</td>
+            </tr>
+            <tr>
+                <td>Sapiens - od zwierząt do bogów</td>
+                <td>Yuval Noah Harari</td>
+                <td>Historia, Nauka</td>
+                <td>Przegląd historii ludzkości od początków do współczesności.</td>
+            </tr>
+            <tr>
+                <td>Siedem śmierci Evelyn Hardcastle</td>
+                <td>Stuart Turton</td>
+                <td>Kryminał, Mistery</td>
+                <td>Zagadkowa opowieść o morderstwie i podróżach w czasie.</td>
+            </tr>
+            <tr>
+                <td>Sen o Okapi</td>
+                <td>Mariana Leky</td>
+                <td>Fikcja, Magiczny realizm</td>
+                <td>Opowieść o życiu w małej wiosce w Niemczech i magicznych wydarzeniach.</td>
+            </tr>
+            <tr>
+                <td>Sherlock Holmes</td>
+                <td>Arthur Conan Doyle</td>
+                <td>Kryminał, Mistery</td>
+                <td>Przygody legendarnego detektywa Sherlocka Holmesa i jego towarzysza Watsona.</td>
+            </tr>
+            <tr>
+                <td>Stary człowiek i morze</td>
+                <td>Ernest Hemingway</td>
+                <td>Fikcja, Klasyka</td>
+                <td>Historia starego rybaka walczącego z wielką rybą na morzu.</td>
+            </tr>
+            <tr>
+                <td>Sto lat samotności</td>
+                <td>Gabriel García Márquez</td>
+                <td>Magiczny realizm, Saga rodzinna</td>
+                <td>Saga rodzinna opisująca losy siedmiu pokoleń rodu Buendía.</td>
+            </tr>
+            <tr>
+                <td>Subtelnie mówię F*ck!</td>
+                <td>Mark Manson</td>
+                <td>Samorozwój, Psychologia</td>
+                <td>Poradnik o akceptacji własnych ograniczeń i priorytetów.</td>
+            </tr>
+            <tr>
+                <td>W drodze</td>
+                <td>Jack Kerouac</td>
+                <td>Fikcja, Klasyka</td>
+                <td>Historia podróży przez Amerykę w poszukiwaniu wolności i przygód.</td>
+            </tr>
+            <tr>
+                <td>Wielki Gatsby</td>
+                <td>F. Scott Fitzgerald</td>
+                <td>Fikcja, Klasyka</td>
+                <td>Opowieść o miłości i ambicji w latach 20. XX wieku.</td>
+            </tr>
+            <tr>
+                <td>Władca Pierścieni saga</td>
+                <td>J.R.R. Tolkien</td>
+                <td>Fantastyka, Epicka</td>
+                <td>Epicka opowieść o walce dobra ze złem w Śródziemiu.</td>
+            </tr>
+            <tr>
+                <td>Wiedźmin cykl</td>
+                <td>Andrzej Sapkowski</td>
+                <td>Fantastyka</td>
+                <td>Przygody Geralta z Rivii, wiedźmina walczącego z potworami.</td>
+            </tr>
+            <tr>
+                <td>Zabić drozda</td>
+                <td>Harper Lee</td>
+                <td>Fikcja, Klasyka</td>
+                <td>Historia o rasizmie i niesprawiedliwości w małym miasteczku w Alabamie.</td>
+            </tr>
+            <tr>
+                <td>Zanim się pojawiłeś</td>
+                <td>Jojo Moyes</td>
+                <td>Romans, Dramat</td>
+                <td>Historia miłości między młodą dziewczyną a sparaliżowanym mężczyzną.</td>
+            </tr>
+            <tr>
+                <td>Żmijowisko</td>
+                <td>Wojciech Chmielarz</td>
+                <td>Kryminał, Thriller</td>
+                <td>Thriller o poszukiwaniach zaginionej córki w małej wsi.</td>
+            </tr>
+            <tr>
+                <td>Zbrodnia i kara</td>
+                <td>Fiodor Dostojewski</td>
+                <td>Klasyka, Fikcja</td>
+                <td>Historia młodego studenta, który popełnia morderstwo.</td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.</p>
+        <p>Autor: Jakub Chmielecki</p>
+    </footer>
+    <script>
+        function searchBooks() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('booksTable');
+            const tr = table.getElementsByTagName('tr');
+            
+            for (let i = 1; i < tr.length; i++) {
+                tr[i].style.display = 'none';
+                const td = tr[i].getElementsByTagName('td');
+                for (let j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        if (td[j].innerHTML.toLowerCase().indexOf(filter) > -1) {
+                            tr[i].style.display = '';
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        function sortTable(n) {
+            const table = document.getElementById('booksTable');
+            let rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            switching = true;
+            dir = "asc"; 
+            
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++; 
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
